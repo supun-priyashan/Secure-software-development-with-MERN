@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faFileCirclePlus,
+    faMessage,
     faFilePen,
-    faUserGear,
     faUserPlus,
+    faUser,
     faRightFromBracket
 } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate, Link, useLocation } from 'react-router-dom'
@@ -48,10 +48,10 @@ const DashHeader = () => {
         newNoteButton = (
             <button
                 className="icon-button"
-                title="New Note"
+                title="New Message"
                 onClick={onNewNoteClicked}
             >
-                <FontAwesomeIcon icon={faFileCirclePlus} />
+                <FontAwesomeIcon icon={faMessage} />
             </button>
         )
     }
@@ -70,7 +70,7 @@ const DashHeader = () => {
     }
 
     let userButton = null
-    if (isManager || isAdmin) {
+    if (isAdmin) {
         if (!USERS_REGEX.test(pathname) && pathname.includes('/dash')) {
             userButton = (
                 <button
@@ -78,7 +78,7 @@ const DashHeader = () => {
                     title="Users"
                     onClick={onUsersClicked}
                 >
-                    <FontAwesomeIcon icon={faUserGear} />
+                    <FontAwesomeIcon icon={faUser} />
                 </button>
             )
         }

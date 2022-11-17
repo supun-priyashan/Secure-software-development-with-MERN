@@ -24,12 +24,7 @@ const Note = ({ noteId }) => {
 
         return (
             <tr className="table__row">
-                <td className="table__cell note__status">
-                    {note.completed
-                        ? <span className="note__status--completed">Completed</span>
-                        : <span className="note__status--open">Open</span>
-                    }
-                </td>
+            
                 <td className="table__cell note__created">{created}</td>
                 <td className="table__cell note__updated">{updated}</td>
                 <td className="table__cell note__title">{decryptMessage(note.title)}</td>
