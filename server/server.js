@@ -55,7 +55,7 @@ app
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB')
-    sslServer.listen(PORT, () => console.log(Server running on port ${PORT}))
+    sslServer.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', err => {
