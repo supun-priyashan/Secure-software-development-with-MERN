@@ -10,6 +10,7 @@ import NewUserForm from './features/users/NewUserForm'
 import EditNote from './features/notes/EditNote'
 import NewNote from './features/notes/NewNote'
 import AddPDFs from './features/files/AddPDFs'
+
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin'
 import RequireAuth from './features/auth/RequireAuth'
