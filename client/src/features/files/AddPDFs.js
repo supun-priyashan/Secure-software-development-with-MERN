@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { useAddNewNoteMutation } from "./notesApiSlice"
+//import { useAddNewNoteMutation } from "./notesApiSlice"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave } from "@fortawesome/free-solid-svg-icons"
 
@@ -107,17 +107,16 @@ const AddPDFs = ({ users }) => {
                     {options}
                 </select>*/}
 
-                <InputLabel id="pdf" style={{
-                    marginTop: '10px',
-                }}>Upload PDF</InputLabel>
-                <Input
+                <label className="form__label" htmlFor="title">
+                    Upload PDF</label>
+                <input
                     id="pdf"
                     name="PDFfile"
                     type="file"
                     value={pdfFile}
                     onChange={(e) => {onPDFFileChanged((e.target.files[0]))}}
-                    error={formik.touched.file && Boolean(formik.errors.file)}
-                    helperText={formik.touched.file && formik.errors.file}
+                    /*error={formik.touched.file && Boolean(formik.errors.file)}
+                    helperText={formik.touched.file && formik.errors.file}*/
                 />
 
             </form>
