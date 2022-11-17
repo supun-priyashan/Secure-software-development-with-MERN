@@ -5,7 +5,7 @@ import {
     faFilePen,
     faUserPlus,
     faUser,
-    faRightFromBracket
+    faPowerOff
 } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { useSendLogoutMutation } from '../features/auth/authApiSlice'
@@ -103,7 +103,7 @@ const DashHeader = () => {
             title="Logout"
             onClick={sendLogout}
         >
-            <FontAwesomeIcon icon={faRightFromBracket} />
+            <FontAwesomeIcon icon={faPowerOff} />
         </button>
     )
 
