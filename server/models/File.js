@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const fileSchema = new mongoose.Schema({
-    title: {
+    user: {
         type: String,
         required: true
     },
-    file: {
+    filename: {
         type: String,
-        default: ''
+        required: true
     }
 });
 
