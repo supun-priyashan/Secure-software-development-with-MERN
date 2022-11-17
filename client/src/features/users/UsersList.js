@@ -33,7 +33,7 @@ const UsersList = () => {
         const tableContent = ids?.length && ids.map(userId => <User key={userId} userId={userId} />)
 
         content = (
-            <table className="table table--users">
+            <table className="table table--users" style={{margin: 'auto',border: '3px solid', width: '1000px'}}>
                 <thead className="table__thead">
                     <tr>
                         <th scope="col" className="table__th user__username">Username</th>

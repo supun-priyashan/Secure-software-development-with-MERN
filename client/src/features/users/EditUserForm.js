@@ -103,6 +103,7 @@ const EditUserForm = ({ user }) => {
 
     const content = (
         <>
+        <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '300px', paddingRight: '100px'}}>
             <p className={errClass}>{errContent}</p>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
@@ -176,6 +177,7 @@ const EditUserForm = ({ user }) => {
                 </select>
 
             </form>
+        </main>
         </>
     )
 

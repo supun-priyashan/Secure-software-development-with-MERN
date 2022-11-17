@@ -82,6 +82,7 @@ const NewUserForm = () => {
 
     const content = (
         <>
+        <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '300px', paddingRight: '100px'}}>
             <p className={errClass}>{error?.data?.message}</p>
 
             <form className="form" onSubmit={onSaveUserClicked}>
@@ -135,6 +136,7 @@ const NewUserForm = () => {
                 </select>
 
             </form>
+        </main>
         </>
     )
 

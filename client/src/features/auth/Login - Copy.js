@@ -63,13 +63,13 @@ const Login = () => {
 
     const content = (
         <section className="public">
-            <header className='header'style={{textAlign: 'center', paddingTop: '45px' }}>
+            <header>
                 <h1>Login</h1>
             </header>
-            <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '100px', paddingRight: '100px'}}>
+            <main className="login">
                 <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
 
-                <form className="form" style={{paddingTop: '30px', paddingLeft: '400px', paddingRight: '100px'}}onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
                     <label htmlFor="username">Username:</label>
                     <input
                         className="form__input"
@@ -91,10 +91,10 @@ const Login = () => {
                         value={password}
                         required
                     />
-                    <button className="form__submit-button" style={{backgroundColor: 'green'}}>Sign In</button>
+                    <button className="form__submit-button">Sign In</button>
 
 
-                    {/* <label htmlFor="persist" className="form__persist">
+                    <label htmlFor="persist" className="form__persist">
                         <input
                             type="checkbox"
                             className="form__checkbox"
@@ -103,7 +103,7 @@ const Login = () => {
                             checked={persist}
                         />
                         Trust This Device
-                    </label> */}
+                    </label>
                 </form>
             </main>
         </section>

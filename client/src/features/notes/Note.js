@@ -37,6 +37,7 @@ const Note = ({ noteId }) => {
                 <td className="table__cell">
                     <button
                         className="icon-button table__button"
+                        style={{backgroundColor: 'grey'}}
                         onClick={handleEdit}
                     >
                         <FontAwesomeIcon icon={faPenToSquare} />

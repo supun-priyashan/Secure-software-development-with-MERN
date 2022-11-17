@@ -92,6 +92,7 @@ const EditNoteForm = ({ note, users }) => {
 
     const content = (
         <>
+        <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '300px', paddingRight: '100px'}}>
             <p className={errClass}>{errContent}</p>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
@@ -162,6 +163,7 @@ const EditNoteForm = ({ note, users }) => {
                     </div>
                 </div>
             </form>
+            </main>
         </>
     )
 

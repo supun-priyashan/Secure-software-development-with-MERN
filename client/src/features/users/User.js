@@ -28,6 +28,7 @@ const User = ({ userId }) => {
                 <td className={`table__cell ${cellStatus}`}>
                     <button
                         className="icon-button table__button"
+                        style={{backgroundColor: 'grey'}}
                         onClick={handleEdit}
                     >
                         <FontAwesomeIcon icon={faPenToSquare} />

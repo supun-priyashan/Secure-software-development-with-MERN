@@ -5,7 +5,7 @@ import useTitle from "../../hooks/useTitle"
 import PulseLoader from 'react-spinners/PulseLoader'
 
 const NotesList = () => {
-    useTitle('ABC company: Notes List')
+    useTitle('ABC company: Message List')
 
     const { username, isManager, isAdmin } = useAuth()
 
@@ -42,7 +42,7 @@ const NotesList = () => {
         const tableContent = ids?.length && filteredIds.map(noteId => <Note key={noteId} noteId={noteId} />)
 
         content = (
-            <table className="table table--notes">
+            <table className="table table--notes" style={{margin: 'auto',border: '3px solid', width: '1000px'}}>
                 <thead className="table__thead">
                     <tr>
                         <th scope="col" className="table__th note__status">Username</th>
@@ -53,7 +53,7 @@ const NotesList = () => {
                         <th scope="col" className="table__th note__edit">Edit</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="tbody" style={{textAlign: 'center'}}>
                     {tableContent}
                 </tbody>
             </table>
