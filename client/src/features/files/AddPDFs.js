@@ -74,7 +74,7 @@ const AddPDFs = ({ users }) => {
                     </div>
                 </div>
                 <label className="form__label" htmlFor="title">
-                    Title:</label>
+                    Remark:</label>
                 <input
                     className={`form__input ${validTitleClass}`}
                     id="title"
