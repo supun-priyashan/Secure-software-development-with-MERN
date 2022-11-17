@@ -52,7 +52,7 @@ const NewNoteForm = ({ users }) => {
         <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '300px', paddingRight: '100px'}}>
             <p className={errClass}>{error?.data?.message}</p>
 
-            <form className="form" onSubmit={onSaveNoteClicked}>
+            <form className="formMsg" onSubmit={onSaveNoteClicked}>
                 <div className="form__title-row">
                     <h2>New Message</h2>
                     <div className="form__action-buttons">
