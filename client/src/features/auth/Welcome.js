@@ -9,7 +9,7 @@ const Welcome = () => {
     useTitle(`ABC company: ${username}`)
 
     const content = (
-        <section className="welcome">
+        <section className="welcome" style={{textAlign: 'center'}}>
 
             <h1>Welcome {username}!</h1>
 
