@@ -10,6 +10,8 @@ const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
+const https = require('https')
+const fs = require('fs')
 const PORT = process.env.PORT || 3500
 
 console.log(process.env.NODE_ENV)
@@ -44,9 +46,16 @@ app.all('*', (req, res) => {
 
 app.use(errorHandler)
 
+const sslServer = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),
+},
+app
+)
+
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB')
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+    sslServer.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', err => {
