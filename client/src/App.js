@@ -17,7 +17,7 @@ import { ROLES } from './config/roles'
 import useTitle from './hooks/useTitle';
 
 function App() {
-  useTitle('ABD company')
+  useTitle('ABC company')
 
   return (
     <Routes>
@@ -34,7 +34,7 @@ function App() {
 
                 <Route index element={<Welcome />} />
 
-                <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />}>
+                <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
                   <Route path="users">
                     <Route index element={<UsersList />} />
                     <Route path=":id" element={<EditUser />} />

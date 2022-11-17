@@ -17,9 +17,9 @@ const Welcome = () => {
 
             <p><Link to="/dash/notes/new">Add New message</Link></p>
 
-            {(isManager || isAdmin) && <p><Link to="/dash/users">View User Settings</Link></p>}
+            {(isAdmin) && <p><Link to="/dash/users">View User Settings</Link></p>}
 
-            {(isManager || isAdmin) && <p><Link to="/dash/users/new">Add New User</Link></p>}
+            {(isAdmin) && <p><Link to="/dash/users/new">Add New User</Link></p>}
 
         </section>
     )
