@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useAddNewNoteMutation } from "./notesApiSlice"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave } from "@fortawesome/free-solid-svg-icons"
+import { encryptMessage } from "../../utils/aes"
 
 const NewNoteForm = ({ users }) => {
 
@@ -36,7 +37,9 @@ const NewNoteForm = ({ users }) => {
     const onSaveNoteClicked = async (e) => {
         e.preventDefault()
         if (canSave) {
-            await addNewNote({ user: userId, title, text })
+            const ttl = encryptMessage(title)
+            const txt = encryptMessage(text)
+            await addNewNote({ user: userId, title: ttl, text: txt })
         }
     }
 
@@ -49,7 +52,7 @@ const NewNoteForm = ({ users }) => {
         <main className="loginn" style={{textAlign: 'center', paddingTop: '50px', paddingLeft: '300px', paddingRight: '100px'}}>
             <p className={errClass}>{error?.data?.message}</p>
 
-            <form className="form" onSubmit={onSaveNoteClicked}>
+            <form className="formMsg" onSubmit={onSaveNoteClicked}>
                 <div className="form__title-row">
                     <h2>New Message</h2>
                     <div className="form__action-buttons">

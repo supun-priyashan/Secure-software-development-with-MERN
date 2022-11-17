@@ -3,6 +3,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from 'react-router-dom'
 import { useGetNotesQuery } from './notesApiSlice'
 import { memo } from 'react'
+import { decryptMessage } from '../../utils/aes'
 
 const Note = ({ noteId }) => {
 
@@ -31,7 +32,7 @@ const Note = ({ noteId }) => {
                 </td>
                 <td className="table__cell note__created">{created}</td>
                 <td className="table__cell note__updated">{updated}</td>
-                <td className="table__cell note__title">{note.title}</td>
+                <td className="table__cell note__title">{decryptMessage(note.title)}</td>
                 <td className="table__cell note__username">{note.username}</td>
 
                 <td className="table__cell">
