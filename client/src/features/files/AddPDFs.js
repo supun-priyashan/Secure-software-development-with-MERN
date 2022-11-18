@@ -7,14 +7,14 @@ import axios from "axios";
 const AddPDFs = ({ users }) => {
 
     const navigate = useNavigate()
-    const [fileName,setFileName] = useState("");
 
-    const [pdfFile,setPDFFile] = useState();
+    const [pdfFile,setPDFFile] = useState(null);
+    const [fileName,setFileName] = useState('');
 
     const onPDFFileChanged = e => {
-        console.log(e)
+        console.log(e.target.files[0])
         setPDFFile(e.target.files[0])
-        setFileName(pdfFile.name)
+        setFileName(e.target.files[0].value);
     }
 
 
@@ -26,15 +26,8 @@ const AddPDFs = ({ users }) => {
 
         const file = new FormData();
         file.append('file',pdfFile);
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data',
-                //"Authorization" : `Bearer ${token}`
-            }
-        };
 
-
-        axios.post("https://localhost:3500/files",file,config)
+        axios.post("https://localhost:3500/files",file)
             .then((response,error) => {
                 if (response.data.success) {
                     alert('File Successfully Uploaded')
@@ -72,9 +65,8 @@ const AddPDFs = ({ users }) => {
                     id="title"
                     name="title"
                     type="file"
-                    autoComplete="off"
-                     value={fileName}
-                     onChange={onPDFFileChanged}
+                    // value={pdfFile}
+                    onChange={(e) => {setPDFFile(e.target.files[0])}}
                     />
             </form>
         </main>
